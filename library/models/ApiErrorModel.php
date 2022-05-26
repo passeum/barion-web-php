@@ -41,7 +41,6 @@ class ApiErrorModel
         if (!empty($json)) {
             $this->Title = $json['Title'];
             $this->Description = $json['Description'];
-            $this->ErrorCode = $json['ErrorCode'];
             $this->HappenedAt = $json['HappenedAt'];
             $this->AuthData = $json['AuthData'];
             $this->EndPoint = $json['EndPoint'];
