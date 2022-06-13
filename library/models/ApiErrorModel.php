@@ -44,7 +44,10 @@ class ApiErrorModel
             $this->HappenedAt = $json['HappenedAt'];
             $this->AuthData = $json['AuthData'];
             $this->EndPoint = $json['EndPoint'];
-            $this->PaymentId = $json['PaymentId'];
+            
+            if (array_key_exists('PaymentId', $json)) {
+                $this->PaymentId = $json['PaymentId'];
+            }
         }
     }
 }
