@@ -39,7 +39,6 @@ class ApiErrorModel
     public function fromJson($json)
     {
         if (!empty($json)) {
-            $this->ErrorCode = $json['ErrorCode'];
             $this->Title = $json['Title'];
             $this->Description = $json['Description'];
             $this->HappenedAt = $json['HappenedAt'];
