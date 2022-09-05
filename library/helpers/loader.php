@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-include "iBarionModel.php";
-include "BarionHelper.php";
+include_once "iBarionModel.php";
+include_once "BarionHelper.php";
 
 $include_dirs = Array(
     realpath(join(DIRECTORY_SEPARATOR, array(dirname(dirname(__FILE__)), "common"))),

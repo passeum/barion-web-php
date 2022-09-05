@@ -23,7 +23,7 @@
 *  
 */
 
-include 'helpers' . DIRECTORY_SEPARATOR . 'loader.php';
+include_once 'helpers' . DIRECTORY_SEPARATOR . 'loader.php';
 
 class BarionClient
 {
