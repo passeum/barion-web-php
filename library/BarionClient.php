@@ -312,8 +312,8 @@ class BarionClient
     private function PostToBarion($url, $data)
     {
         $ch = curl_init();
-        
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+
+        $userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
         if ($userAgent == "") {
             $cver = curl_version();
             $userAgent = "curl/" . $cver["version"] . " " .$cver["ssl_version"];
@@ -370,7 +370,7 @@ class BarionClient
         $getData = http_build_query($data);
         $fullUrl = $url . '?' . $getData;
         
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
         if ($userAgent == "") {
             $cver = curl_version();
             $userAgent = "curl/" . $cver["version"] . " " .$cver["ssl_version"];
