@@ -8,6 +8,7 @@ class PreparePaymentWithAppleTokenResponseModel extends BaseResponseModel implem
     public $IsSuccessful;
     public $ThreeDSAuthClientData;
     public $TraceId;
+    public $PaymentStatus;
 
     function __construct()
     {
@@ -18,6 +19,7 @@ class PreparePaymentWithAppleTokenResponseModel extends BaseResponseModel implem
         $this->IsSuccessful = "";
         $this->ThreeDSAuthClientData = "";
         $this->TraceId = "";
+        $this->PaymentStatus = "";
     }
 
     public function fromJson($json)
@@ -31,6 +33,9 @@ class PreparePaymentWithAppleTokenResponseModel extends BaseResponseModel implem
             $this->ThreeDSAuthClientData = jget($json, 'ThreeDSAuthClientData');
             $this->TraceId = jget($json, 'TraceId');
 
+            if ($this->Status === PaymentStatus::Succeeded) {
+                $this->PaymentStatus = 40;
+            }
         }
     }
 }
